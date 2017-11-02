@@ -1,0 +1,191 @@
+/**myQ.wxss**/
+.container {
+  width:100%;
+  background-color: #F0F0F0;
+  overflow-x:hidden;
+  font-family: '微软雅黑'
+}
+.in-bl {display: inline-block;}
+.v-m {vertical-align:middle;}
+.f-l {float: left;}
+.f-r {float: right;}
+.fs-18 {font-size: 18rpx;}
+.fs-20 {font-size: 20rpx;}
+.fs-22 {font-size: 22rpx;}
+.fs-23 {font-size: 23rpx}
+.fs-26 {font-size: 26rpx;}
+.fs-30 {font-size: 30rpx;}
+.fs-42 {font-size: 42rpx;}
+.mr-14 {margin-right: 14rpx;}
+.clear {clear: both;}
+.c-blue {color: #3DB6FB;}
+.c-male {background-color: #19B2EF;}
+.c-female {background-color: #F96768;}
+.c-level {background-color: #EFA126;}
+.c-job {background-color: #4AC1BD;}
+.c-333 {color: #333;}
+.c-666 {color: #666;}
+.c-999 {color: #999;}
+.disnone{display: none}
+.myQ{
+  width: 100%;
+  padding: 32rpx 0;
+  background-color: #fff;
+  border-bottom:2rpx solid #e1e1e1;
+}
+.Qcontent,.Qimg,.ties,.keyword {
+  padding: 0 30rpx;
+}
+.Qcontent text {
+  font-size: 30rpx;
+  color: #333;
+}
+.Qimg,.ties {
+  margin-top: 17rpx;
+}
+.Qimg image {
+  max-width:230rpx;
+  max-height:230rpx;
+}
+.ties,.keyword {
+  color: #999;
+  font-size: 26rpx;
+  line-height: 24rpx;
+  min-height: 26rpx
+}
+.keyword {
+  margin-top: 18rpx;
+}
+.show_word image {
+  width: 20rpx;
+  height: 20rpx;
+}
+.show_word text{
+  margin-left: 11rpx;
+}
+.show_word{
+  width:50%;
+}
+.edit_word text{
+  color: #0D88D0;
+}
+.search {
+  width: 100%;
+  margin-top: 16rpx;
+  background-color: #fff;
+  padding:1rpx 0;
+  border-bottom:2rpx solid #e1e1e1;
+  border-top:2rpx solid #e1e1e1;
+}
+.sc_txt {
+  margin-top: 32rpx;
+}
+.sc_txt text {
+ text-align: center;
+ font-size: 28rpx;
+ color: #666;
+ line-height: 30rpx;
+ display: block;
+ height:34rpx;
+}
+.push {
+  text-align: center;
+  margin: 15rpx auto 24rpx;
+  width: 161rpx;
+  height: 161rpx;
+  border: 10rpx solid #3DB6FB;
+  border-radius: 50%;
+}
+.pushNum {
+  margin-top: 30rpx;
+}
+.pushTxt {
+  line-height: 22rpx;
+}
+.tt {
+  width: 100%;
+  display: block;
+  margin: 21rpx 0 15rpx 30rpx;
+}
+.result{
+  width: 100%;
+  background-color: #fff;
+  border-top:2rpx solid #e1e1e1;
+}
+.result_item {
+  padding: 20rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  border: 2rpx solid #F0F0F0;
+}
+.headImg image {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  border:1rpx solid #999;
+}
+.element{
+  display:flex;
+  flex-direction:row;
+}
+.element label {
+  text-align: center;
+  display: inline-block;
+  min-width: 49rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  color: #fff;
+  padding:5rpx 10rpx;
+  margin-right: 7rpx;
+  border-radius: 10rpx;
+}
+.data {
+  width: 100%;
+  margin-left: 16rpx;
+}
+.data .data-r {
+  width: 100%;
+  margin-top: 22rpx;
+  display:flex;
+  flex-direction: row;
+}
+.data .data-r-head {
+  margin-top: 22rpx;
+  line-height: 30rpx;
+  height: 30rxp;
+}
+.mark{
+  float: right;
+}
+.mark image {
+  width: 23rpx;
+  height: 23rpx;
+  margin-left: 20rpx;
+  margin-right: 5rpx;
+  vertical-align: middle;
+}
+.nickName{
+  width: 183rpx;
+  height: 30rpx;
+  line-height:30rpx;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow:ellipsis;
+  white-space:nowrap; 
+  vertical-align: middle;
+}
+.refer-Content{
+  width: 470rpx;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+  font-size: 26rpx;
+  padding:5rpx 0 0;
+}
+.user-star-icon{
+  width:19rpx;
+  height: 18rpx;
+  position: relative;
+  left:-4rpx;
+}

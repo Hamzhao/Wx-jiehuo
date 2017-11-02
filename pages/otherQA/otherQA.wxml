@@ -1,0 +1,97 @@
+<scroll-view class="container">
+  <view class="top-container">
+    <view class="ask-item">
+      <view class="ask-text">
+        {{item.content}}
+      </view>
+      <view class="user-images-view">
+          
+              <block wx:for="{{item.pictureUrls}}" wx:for-item="i">
+                <block wx:if="{{i}}"> 
+                  <image bindtap="PreviewImage" data-pic="{{item.pictureUrls}}" data-index="{{index}}" mode="aspectFit" class="user-media-image {{item.isPicture && 'user-record-image2'}}" mode="aspectFill" src="{{imgUrl + i}}"></image>
+                </block>
+              </block>
+      </view>
+      <view class="ask-bottom">
+        <view class="ask-label">
+          <image mode="aspectFill" src="../../image/disabuse_myquestion_tag.png" class="label-icon"></image>
+          {{item.questionLabels[0]?item.questionLabels[0]:''}} {{item.questionLabels[1]?', '+item.questionLabels[1]:''}} {{item.questionLabels[2]?', '+item.questionLabels[2]:''}} {{item.questionLabels[3]?', '+item.questionLabels[3]:''}}
+        </view>
+        <view class="ask-follow">
+          {{replyCount}}人评论
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-container" wx:for="{{reply}}" wx:key="{{index}}">
+    <image class="user-header-image" src="{{item.userPicture}}"></image>
+    <view class="user-answer-body">
+      <text class="user-name">{{item.nickName}}</text>
+      <text class="user-answer">{{item.content}}</text>
+      <view class="user-images-view">
+      <block wx:for="{{item.pictureUrls}}" wx:if="{{item.pictureUrls.length&&item.pictureUrls.length!==0}}" wx:for-item="i">
+        <image bindtap="PreviewImage" data-pic="{{item.pictureUrls}}" data-index="{{index}}" src="{{i}}" mode="aspectFit" class="{{item.pictureUrls.length>3?'user-record-image2':'user-answer-image'}}"></image>
+      </block>
+      </view>
+      <view class="user-answer-bottom">
+        <view class="user-answer-left">
+          <text class="left-text">{{item.askTime}}</text>
+          <text class="left-text">{{item.distance}}</text>
+        </view>
+        <view class="user-answer-right">
+          <view data-id="{{index}}" data-qaid="{{item.answerId}}" class="user-answer-item {{!item.isMe && 'disnone'}}" bindtap="Praise">
+            <image class="user-answer-icon" src="{{item.isPraise == 0?'../../image/good.png':'../../image/discover_collection.png'}}"></image>
+            赞({{item.praiseCount}})
+          </view>
+          <view class="user-answer-item {{!item.isMe && 'disnone'}}">
+            <image src="../../image/otherReport@2x.png" mode="aspectFit" class="user-answer-icon"></image>
+            举报
+          </view>
+          <view class="user-answer-item {{item.isMe && 'disnone'}}" bindtap="Delete" data-reqaid="{{index}}">
+            <image src="../../image/delete.png" mode="aspectFit" class="user-answer-icon"></image>
+            删除
+          </view>
+          <view class="user-answer-item {{item.isMe && 'disnone'}}">
+            <image src="../../image/find_answer_lock.png" mode="aspectFit" class="user-answer-icon"></image>
+            改为私密
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btn-view">
+    <view class="btn-public" bindtap="showChoose" data-isprivacy="0">
+      公开评论
+    </view>
+    <view class="btn-noname" data-isprivacy="1">
+      匿名评论
+    </view>
+  </view>
+</scroll-view>
+
+<view class="choose-bg" wx:if="{{isShow==false}}">
+  <view class="choose-view search-view">
+        <view class="choose-title">
+          <text class="choose-title-text">评论</text>
+        </view>
+        <form bindsubmit="formSubmit" bindreset="closeChoose">
+          <view class="border">
+            <view class="search-input-view" bindtap="Focus">
+              <!--<view class="input" style="color:{{search===''?'#d3d3d3':'#666'}}" bindtap="Focus">
+              {{search===''?placeHolder:search}}   
+              </view>
+              <input maxlength="-1" class="hideInput" focus="{{f}}" value="{{search}}" type="text" bindinput="searchInput" name="input"/>-->
+              <input maxlength="-1" class="inputText" focus="{{f}}" name="input" placeholder="请输入评论内容"/>
+            </view>
+            </view>
+            <view class="choose-btn">
+              <button class="choose-confirm" disabled="{{disabled}}" data-update="true" data-show="isShow1" data-isprivacy="0" formType="submit">
+                <text class="chooser-confirm-text">确定</text>
+              </button>
+              <button class="choose-cancel" data-update="false" data-show="isShow1" formType="reset">
+                <text class="chooser-cancel-text">取消</text>
+              </button>
+            </view>
+          </form>
+  </view>
+</view>

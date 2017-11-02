@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+  <form bindsubmit="{{submit?'formSubmit':'showToast'}}">
+     <textarea focusIn="IME.enabled = true" placeholder="请输入您想发布的需求、问题或信息......" name="TxContent" value='{{content}}' maxlength="-1"/>
+    <view class="addImg">
+      <view class="picBox">
+        <image wx:for="{{imgItem}}" src="{{item}}" bindtap="delImg"></image>
+        <view class="icon-addImg" bindtap="addImg">
+          <image src="../../image/add_image.png" ></image>
+        </view>
+      </view> 
+    </view>
+    <view class="radios" >
+      <text wx:for="{{labelType}}" class="{{curTxIndex== index+1 ? 'rd-active' : ''}}" data-id="{{index+1}}" bindtap="tabFun">{{item.category}}</text>
+    </view>
+    <view class="btn-area">
+      <button disabled="{{disabled}}" formType="submit">确认发送</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,79 @@
+<scroll-view class="container" style="min-height:{{Sheight}}px">
+  <view class="top-container">
+    <view class="top-header-view">
+      <image src="{{userDetail.picture}}" class="top-header-image"></image>
+      <text class="top-header-text">{{userDetail.nickName}}</text>
+    </view>
+    <view class="top-detail-view">
+      <view class="top-detail-item">
+        星级  
+        <image class="top-star-icon" src="../../image/discover_starlv.png"></image>  
+        {{userDetail.level}}
+      </view>
+      <view class="top-detail-item">
+        粉丝 {{userDetail.fansCount}}
+      </view>
+      <view class="top-detail-item">
+        申请为大咖
+      </view>
+    </view>
+  </view>
+  <view class="menu-item-view">
+    <view class="menu-item">
+      <image mode="aspectFit" class="menu-item-icon" src="../../image/discover_interlocution.png"></image>
+      问答圈
+      <view class="red-point"></view>    
+    </view>
+  </view>
+  <view class="menu-item-view">
+    <view class="menu-item bottom-border">
+      <image mode="aspectFit" class="menu-item-icon" src="../../image/discover_question.png"></image>
+      向大咖提问
+    </view>
+    <view class="menu-item">
+      <image mode="aspectFit" class="menu-item-icon" src="../../image/discover_questions.png"></image>
+      我接收到的问题
+      <view class="red-point"></view>    
+    </view>
+  </view>
+  <view class="menu-item-view">
+    <view class="menu-item bottom-border">
+      <image mode="aspectFit" class="menu-item-icon" src="../../image/discover_collection.png"></image>
+      我的赞   
+    </view>
+    <view class="menu-item" bindtap="goAbout">
+      <image mode="aspectFit" class="menu-item-icon" src="../../image/discover_help.png"></image>
+      关于解惑
+      <image class="menu-item-next" src="../../image/discover_next.png"></image>
+    </view>
+  </view>
+  <view class="menu-item-view banner-view">
+    想要附近问答、即时聊天、撩妹耍帅、领取奖品，请登录“解惑”APP，体验更多功能、获得更多快乐。
+  </view>
+</scroll-view>
+<view class="choose-bg {{isShow?'disnone' : ''}}">
+  <view class="choose-view">
+        <view class="choose-title">
+          <text class="choose-title-text">注册</text>
+        </view>
+        <view class="choose-body">
+          <view class="phone-input-view">
+            <input class="input" placeholder="输入手机号码" type="number" maxlength="13" placeholder-class="input-placeholder"/>
+            <input class="input" placeholder="输入验证码" type="number" placeholder-class="input-placeholder" />
+          </view>
+          <view class="phone-input-view">
+             <view class="input-btn {{isTest?'':'input-click'}}" bindtap="test">
+              {{text}}
+            </view>   
+          </view>
+        </view>
+        <view class="choose-btn">
+          <view hover="true" hover-class="view-hover" class="choose-confirm">
+            <text class="chooser-confirm-text">确定</text>
+          </view>
+          <view hover="true" hover-class="view-hover" class="choose-cancel" bindtap="choose">
+            <text class="chooser-cancel-text">取消</text>
+          </view>
+        </view>
+  </view>
+</view>

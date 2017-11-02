@@ -1,0 +1,7 @@
+/**app.wxss**/
+body{
+    font-family: 'MicrosoftYaHei';
+}
+.container{
+  background-color: #F0F0F0;
+}

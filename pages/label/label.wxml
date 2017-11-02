@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="title">
+    <text class="fs-30 f-l">选择关键词(点击删除)</text><view class="in-bl fs-28 f-r confirm" bindtap="Confirm">确定</view>
+  </view>
+  <scroll-view class="box fs-28" scroll-y="true">
+    <text wx:for="{{keyword}}" bindtap="delLabel" data-index="{{index}}">{{item}}</text>
+  </scroll-view>
+  <form>
+    <input class="{{phclass=='placeholder-none'? 'search' : 'search placeholder-style'}}" placeholder="搜索" placeholder-class="ph-Class" bindfocus="phFun"  bindinput="phFun" bindblur="blurFun"/>
+  </form>
+  <view class="tab-box">
+    <view class="tab in-bl f-l" bindtap="tabFun">
+      <text wx:for="{{labelType}}" class="{{curTxIndex== index+1 ? 'tab-active' : 'tab-noactive'}}" data-id="{{index+1}}" bindtap="getItem">{{item.category}}</text>
+    </view>
+    <scroll-view scroll-y class="tab-list in-bl f-r">
+      <text wx:for='{{labelItem}}' bindtap="tabLabel" data-id="{{item.id}}" data-value="{{item.labelName}}">{{item.labelName}}</text>
+    </scroll-view>
+  </view>
+</view>

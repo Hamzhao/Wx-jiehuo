@@ -1,0 +1,219 @@
+/**index.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: '微软雅黑'
+} 
+.in-bl{
+  display: inline-block
+}
+.flex-c{
+  display: flex;
+  flex-direction:column ;
+}
+.disnone{
+  display: none !important
+  }
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background-color: #3DB6FB
+}
+.submit {
+  position: absolute;
+  right: 24rpx;
+  top: 32rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+.userinfo-avatar {
+  width: 121rpx;
+  height: 121rpx;
+  margin: 23rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+  color: #fff;
+  margin-top: 31rpx;
+  font-size: 24rpx;
+}
+.userinfo-otherdata {
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 19rpx;
+}
+.userinfo-LvFans {
+  margin-top: 32rpx;
+  line-height: 24rpx;
+  margin-bottom: 41rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+.start-icon {
+  color: yellow;
+  width: 25rpx;
+  height: 25rpx;
+}
+.userinfo-fansCount {
+  margin-left: 64rpx;
+}
+.goodAnster {
+  width: 100%;
+  font-size: 24rpx;
+  padding: 20rpx 0;
+  background-color: #fff;
+}
+.goodAnster label {
+  margin-left: 31rpx;
+  margin-right: 30rpx;
+}
+.goodAnster text {
+  color: #fff;
+  padding: 10rpx 25rpx 8rpx;
+  background-color: #2CAAD0;
+  border-radius: 20px;
+  margin-right: 7rpx;
+}
+.main-model {
+  width: 100%;
+  margin-top: 15rpx;
+  background-color: #fff;
+}
+.main-model label {
+  display: inline-block;
+  color: #999999;
+  width: 160rpx;
+  font-size: 28rpx;
+  padding: 32rpx 23rpx 32rpx 38rpx;
+}
+.main-model .text-v {
+  display: inline-block;
+  width: 450rpx;
+  font-size: 28rpx;
+  padding: 32rpx;
+  border-bottom: 2rpx solid #E3E3E3; 
+}
+.main-model view {
+  position: relative;
+}
+.main-model .view-item{
+  display: flex;
+  flex-direction: row
+}
+.startLv {
+  display: inline-block;
+  width: 450rpx;
+  font-size: 26rpx;
+  padding: 30rpx;
+  border-bottom: 2rpx solid #E3E3E3; 
+}
+.startLv image {
+  width: 28rpx;
+  height: 26rpx;
+}
+.icon-next {
+  width: 18rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+}
+.main-model-h {
+  display: inline-block;
+  width: 450rpx;
+  font-size: 26rpx;
+  padding: 30rpx;
+  border-bottom: 2rpx solid #E3E3E3; 
+}
+.hobby .text-h{
+  font-size: 26rpx;
+}
+
+.edit-bg{
+  position: fixed;
+  top:0;
+  left: 0;
+  display: flex;
+  width:100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .3);
+}
+.edit-view{
+  display: flex;
+  flex-direction: column;
+  border-radius: 7rpx;
+  background-color: white;
+  width:658rpx;
+  overflow: hidden;
+}
+.edit-title{
+  display: flex;
+  height: 90rpx;
+  align-items: center;
+  justify-content: center;
+}
+.edit-title-text{
+  font-size: 32rpx;
+  color:#333333;
+}
+.edit-input{
+  margin: 10rpx 0;
+}
+.edit-input input{
+  width: 90%;
+  margin: 0 auto;
+  color: #333;
+  border-radius: 5px;
+  padding: 3rpx 3%;
+  border: 2rpx solid #E3E3E3  
+}
+.edit-btn{
+  display: flex;
+  border-top: 2rpx solid #E3E3E3;
+  align-items: center;
+  justify-content: center;
+}
+.edit-confirm,.edit-cancel{
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: center;
+  height: 94rpx;
+}
+.edit-confirm-text,.edit-cancel-text{
+  font-size: 32rpx;
+  color:#999;
+}
+.edit-confirm{
+  border-right: 2rpx solid #E3E3E3;
+}
+
+.sexPick{
+  width: 80%;
+  height: 200rpx;
+  background-color: white;
+}
+.sexPick-item{
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  line-height: 50rpx;
+  height: 50rpx !important;
+}
+.sexbtn{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 94rpx;
+  background-color: white;
+  border: 2rpx solid #E3E3E3;
+}

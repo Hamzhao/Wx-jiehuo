@@ -1,0 +1,79 @@
+<scroll-view scroll-y="true" class="container" style="height:{{Sheight}}px">
+  <view class="top-container">
+    {{userDetail.nickName}}
+    <image class="top-header-image" src="{{userDetail.picture}}"></image>
+    <view class="top-detail-one">
+      {{userDetail.sex==0?'男':'女'}}{{userDetail.age==null?'':' · '+userDetail.age + '岁'}}{{userDetail.job==null?'':' · '+userDetail.job}}{{' · '+userDetail.distance}}{{' · '+userDetail.onlineTime}}
+    </view>
+    <view class="top-detail">
+      <view class="top-detail-left">
+        星级
+        <image class="top-star-icon" src="../../image/discover_starlv.png"></image>
+        {{userDetail.level}}
+      </view>
+      <view class="top-detail-right">
+        粉丝 {{userDetail.fansCount}}
+      </view>
+    </view>
+    <view class="top-right-view">
+      资料
+    </view>
+  </view>
+  <view class="label-view">
+    擅长回答
+    <view class="label-item" wx:for="{{userDetail.label}}" wx:key="{{index}}">
+      {{item}}
+    </view>
+  </view>
+  <view class="user-record-item" wx:for="{{askInfo}}" wx:key="{{index}}">
+    <view class="user-record-text">
+      {{item.content}}
+    </view>
+    <view class="user-record-image-view {{item.pictureUrls.length==0?'hide':''}}">
+      <image wx:for="{{item.pictureUrls}}" wx:key="{{index}}" wx:for-item="i" class="{{item.pictureUrls.length>2?'user-record-image2':'user-record-image'}}" src="{{imgUrl + i}}"></image>
+    </view>
+    <view class="user-record-detail">
+      <view class="user-record-left">
+        <view class="user-record-time">
+          {{item.onlineTime}}
+        </view>
+        <view class="user-record-location">
+          {{item.distance}}
+        </view>
+      </view>
+      <view class="user-record-right">
+        <view class="user-record-good" data-qaid="{{item.questionAnswerId}}" data-id="{{index}}" bindtap="Praise">
+          <image mode="aspectFit" src="{{item.isPraise == 0?'../../image/good.png':'../../image/discover_collection.png'}}" class="user-record-icon"></image>
+          赞({{item.praiseCount}})
+        </view>
+        <view class="user-record-follow" bindtap="bindViewTap" data-itemindex="{{index}}">
+          <image mode="aspectFit" src="../../image/message.png" class="user-record-icon"></image>
+          跟贴({{item.replyCount}})
+        </view>
+        <view class="user-record-warn">
+          <image mode="aspectFit" src="../../image/otherReport@2x.png" class="user-record-icon"></image>
+          举报
+        </view>
+      </view>
+    </view>
+  </view>
+ 
+</scroll-view>
+<view class="tab-bar">
+  <view class="tab-bar-item">
+    <image mode="aspectFit" class="tab-bar-icon" src="../../image/gsery.png"></image>
+    对话
+  </view>
+  <view class="tab-bar-item" data-otherId="{{userDetail.id}}" bindtap="follow">
+    <image mode="aspectFit" class="tab-bar-icon" src="../../image/arsytyuo.png"></image>
+    {{focus}}
+  </view>
+  <view class="tab-bar-item">
+    <image mode="aspectFit" class="tab-bar-icon" src="../../image/ftuyity.png"></image>
+    评价
+  </view>
+  <view class="tab-bar-item">
+    <image mode="aspectFit" class="tab-bar-icon" src="../../image/ewrwetuyt.png"></image>
+    更多
+  </view>
+</view>

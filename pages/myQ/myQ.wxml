@@ -1,0 +1,62 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="myQ">
+    <view class="Qcontent">
+      <text>{{questionData.content}}</text>
+    </view>
+    <view class="Qimg {{imgs?'':'disnone'}}">
+      <image wx:for="{{imgs}}" src="{{item}}"></image>
+    </view>
+    <view class="ties clear">
+      <text class="f-l">{{disTime}}</text><text class="f-r mr-14">{{questionData.replyCount}}人评论</text>
+    </view>
+    <view class="keyword clear">
+      <view class="show_word f-l">
+        <image src="../../image/disabuse_myquestion_tag.png"></image>
+        <text wx:for="{{labelArr}}">{{item}}</text>
+      </view>
+      <view class="edit_word f-r">
+        <text>修改关键词</text>
+      </view>
+    </view>
+  </view>
+  <view class="search">
+    <view class="sc_txt">
+      <text>正为您寻找答案</text>
+      <text>可能需要十几分钟，请耐心等候</text>
+    </view>
+    <view class="push">
+        <view class="pushNum">
+          <text class="c-blue fs-42">{{questionData.pushCount}}</text><label class="fs-26 c-333">位</label>
+        </view>
+        <view class="pushTxt">
+          <text class="fs-26 c-666">网友已推送</text>
+        </view>
+    </view>
+  </view>
+  <text class="tt fs-26 c-666">您也可以选择与下列网友交谈</text>
+  <view class="result">
+    <view class="result_item" wx:for="{{pushData}}" wx:for-item="item" data-id="{{item.userId}}">
+      <view class="headImg">
+        <image src="{{imgUrl + item.userPicture}}"></image>
+      </view>
+      <view class="data">
+        <view class="data-r-head">
+          <text class="fs-30 c-333 nickName">{{item.nickName}}</text>
+          <view class="in-bl mark f-r">
+            <image src="../../image/nearby_distance.png"></image><text class="c-999 fs-22 v-m">{{item.distance}}</text>
+            <image src="../../image/nearby_time.png"></image><text class="c-999 fs-22 v-m">{{item.onlineTime}}</text>
+          </view>
+        </view>
+        <view class="data-r element fs-23">
+          <label class="{{item.sex==0?'c-male':'c-female'}}">{{item.age==null?0:item.age}}岁</label>
+          <label class="c-level"><image class="user-star-icon" src="../../image/discover_starlv.png"></image>{{item.level}}</label>
+          <label class="c-job {{item.job==''||item.job==null?'disnone':''}}">{{item.job}}</label>
+        </view>
+        <view class="data-r c-666 fs-26">
+          <text class="text-v refer-Content">{{item.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

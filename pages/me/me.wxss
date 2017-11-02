@@ -1,0 +1,245 @@
+/**me.wxss**/
+.container{
+  background-color: #F0F0F0;
+}
+.top-container{
+  width:100%;
+  background-color: #3DB6FB;
+  padding-bottom: 16rpx;
+  height: 400rpx;/*423rpx*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between
+}
+.top-header-view{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 228rpx;
+  /*padding-top:30rpx;*/
+}
+.top-header-image{
+  width:150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-bottom: 18rpx;
+}
+.top-header-text{
+  font-size: 30rpx;
+  color:#ffffff;
+}
+.top-detail-view{
+  height: 104rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+  font-size: 30rpx;
+  color:#ffffff;
+  width:90%;
+}
+.top-star-icon{
+  width:30rpx;
+  height: 30rpx;
+  margin:0 10rpx;
+  position: relative;
+  top:-1rpx;
+  left:0;
+}
+
+.menu-item-view{
+  border:1rpx solid #D3D3D3;
+  border-left:none;
+  border-right: none;
+  margin-bottom: 20rpx;
+  background-color: #ffffff;
+  padding-left:35rpx;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 30rpx;
+  color:#333333;
+}
+.menu-item{
+  display: flex;
+  align-items: center;
+  padding:27rpx 0;
+  width:680rpx;
+  position: relative;
+  font-size: 32rpx;
+}
+.menu-item-icon{
+  width:53rpx;
+  height: 45rpx;
+  margin-right: 18rpx;
+}
+.menu-item-next{
+  width:22rpx;
+  height: 38rpx;
+  position: absolute;
+  top:28rpx;
+  right:0;
+}
+.bottom-border{
+  border-bottom: 2rpx solid #D3D3D3;
+}
+.red-point{
+  width:15rpx;
+  height: 15rpx;
+  border-radius: 50%;
+  margin-left:17rpx;
+  background-color: #F96768;
+}
+.banner-view{
+  font-size: 28rpx;
+  line-height: 37rpx;
+  height: 69rpx;
+  padding:36rpx 38rpx;
+  color:#000000;
+  text-align: justify;
+}
+.top-detail-item{
+  display: flex;
+  align-items: center;
+}
+/**弹出框**/
+/**choose**/
+.choose-bg{
+  position: fixed;
+  top:0;
+  left: 0;
+  display: flex;
+  width:100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .3);
+}
+.choose-view{
+  display: flex;
+  flex-direction: column;
+  border-radius: 7rpx;
+  background-color: white;
+  width:658rpx;
+  overflow: hidden;
+}
+.choose-body{
+  padding:0 39rpx;
+  display: flex;
+  align-items: flex-start;
+}
+.choose-title{
+  display: flex;
+  height: 90rpx;
+  align-items: center;
+  justify-content: center;
+}
+.choose-title-text{
+  font-size: 32rpx;
+  color:#333333;
+}
+.choose-item-body-view{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.choose-item{
+  height: 58rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:30rpx;
+  flex: 1 0 auto;
+  border:1rpx solid #D3D3D3;
+  margin:17rpx 10rpx 17rpx 10rpx;
+  color:#333333; 
+  font-size: 32rpx;
+}
+.choose-item-active{
+  background-color: #17B1F7;
+  color:#ffffff;
+  border:1rpx solid #17B1F7;
+}
+.choose-picker-num-icon{
+  width:16rpx;
+  height: 29rpx;
+}
+.choose-item-name,.choose-picker-text{
+  font-size: 30rpx;
+  color:#666666;
+}
+.choose-picker-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 73rpx;
+  border-bottom:2rpx solid #E3E3E3;
+}
+.choose-picker-item:last-child{
+  border-bottom: none;
+}
+.choose-picker-num-text{
+  font-size: 30rpx;
+  color:#333333;
+  margin-right: 21rpx;
+}
+.choose-btn{
+  display: flex;
+  border-top: 2rpx solid #E3E3E3;
+  align-items: center;
+  justify-content: center;
+}
+.choose-confirm,.choose-cancel{
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: center;
+  height: 94rpx;
+}
+.chooser-confirm-text,.chooser-cancel-text{
+  font-size: 32rpx;
+  color:#C3C3C3;
+}
+.choose-confirm{
+  border-right: 2rpx solid #E3E3E3;
+}
+.chooser-confirm-text{
+  color:#17B1F7;
+}
+.view-hover{
+  background-color: #E3E3E3;
+}
+.disnone{
+  display: none;
+}
+.input-placeholder{
+  font-size: 30rpx;
+  color:#aaa;
+}
+.input-btn{
+  font-size: 30rpx;
+  padding:10rpx 15rpx;
+  background-color: #17B1F7;
+  color:white;
+  border-radius: 7rpx;
+}
+.input-click{
+  background-color: #aaa
+}
+.phone-input-view{
+  height:150rpx;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.input{
+  height: 80rpx;
+  margin-bottom: 10rpx;
+}

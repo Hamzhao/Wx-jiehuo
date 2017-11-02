@@ -1,0 +1,136 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#F0F0F0;">
+  <text class="submit" bindtap="saveData">保存</text>
+  <view  bindtap="bindViewTap" class="userinfo">
+    <text class="userinfo-nickname">{{nickName}}</text>
+    <image class="userinfo-avatar" src="{{WeChatInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-otherdata">{{sex==0?'男':'女'}} · {{age?age:'0'}}岁 · {{job?job:'未知'}} · {{radius}} · {{Lslogintime}}</text>
+    <view class="userinfo-LvFans">
+      <text class="userinfo-startLv">星级 </text><image class="start-icon" mode="aspectFit" src="{{src}}"></image><text>{{userInfo.level}}</text>
+      <text class="userinfo-fansCount">粉丝  <text>{{userInfo.fansCount}}</text></text>
+    </view>
+  </view>
+  <view class="goodAnster">
+    <label>擅长回答</label>
+    <text bindtap="goLabel" wx:for="{{goodAnswer}}">{{item}}</text>
+  </view>
+  <view class="main-model">
+    <view class="view-item">
+      <label>解惑号</label><text class="text-v">{{userInfo.number}}</text>
+    </view>
+    <view class="view-item">
+      <label>昵称</label>
+      <text class="text-v" bindtap="nameShow">{{nickName}}</text>
+      <image class="icon-next" src="{{nexticon}}"></image>
+    </view>
+    <view class="view-item">
+      <label>星级</label><view class="startLv"><image class="start-icon" mode="aspectFit" src="{{src}}"></image>{{userInfo.level}}</view>
+    </view>
+    <view class="view-item">
+      <label>性别</label>
+      <picker class="in-bl" bindchange="bindPickerChange" value="{{sex}}" range="{{sexType}}">
+        <view class="picker" value="{{sex}}">
+          <text class="text-v">{{sex==0?'男':'女'}} </text>
+        </view>
+      </picker>
+      <image class="icon-next" src="{{nexticon}}"></image>
+    </view>
+    <view class="view-item">
+      <label>年龄</label>
+      <text class="text-v" bindtap="ageShow">{{age?age:'0'}}</text>
+      <image class="icon-next" src="{{nexticon}}"></image>
+    </view>
+  </view>
+  <view class="main-model" style="margin-top:17rpx;">
+    <view  class="view-item">
+      <label>擅长回答</label><view class="main-model-h"><text class="text-h" wx:for="{{goodAnswer}}"> {{item}} </text></view>
+    </view>
+    <view  class="view-item">
+      <label>职业</label>
+      <text class="text-v" bindtap="jobShow">{{job?job:' '}}</text>
+      <image class="icon-next" src="{{nexticon}}"></image>
+    </view>
+    <view  class="view-item">
+      <label>兴趣爱好</label><view class="main-model-h"><text class="text-h" wx:for="{{hobby}}"> {{item}} </text></view>
+    </view>
+    <view  class="view-item">
+      <label>家乡</label><text class="text-v">{{homeTown?homeTown:' '}}</text>
+    </view>
+    <view  class="view-item">
+      <label>学校</label><text class="text-v">{{userInfo.school?userInfo.school:' '}}</text>
+    </view>
+  </view>
+  <view class="main-model" style="margin-top:17rpx;">
+    <view  class="view-item">
+      <label>情感状态</label>
+      <text class="text-v" wx:if="{{userInfo.emotionStatus == 0}}">单身</text>
+      <text class="text-v" wx:elif="{{userInfo.emotionStatus == 1}}">恋爱中</text>
+      <text class="text-v" wx:elif="{{userInfo.emotionStatus == 2}}">已婚</text>
+      <text class="text-v" wx:elif="{{userInfo.emotionStatus == 3}}">同性</text>
+      <text class="text-v" wx:else>保密</text>
+    </view>
+    <view  class="view-item">
+      <label>星座</label><text class="text-v">{{userInfo.constellation?userInfo.constellation:' '}}</text>
+    </view>
+    <view class="view-item">
+      <label>注册日期</label><text class="text-v">{{registerTime}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="edit-bg {{nameShow ? 'disnone' : ''}}">
+  <view class="edit-view">
+    <view class="edit-title">
+      <text class="edit-title-text">修改昵称</text>
+    </view>
+    <view class="edit-input">
+      <input type="text" value='{{nickName}}' bindinput="inputTxt"/>
+    </view>
+    <view class="edit-btn">
+      <view class="edit-confirm" bindtap="nameConfirm">
+        <text class="edit-confirm-text">确定</text>
+      </view>
+      <view class="edit-cancel" bindtap="editCancel">
+        <text class="edit-cancel-text">取消</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="edit-bg {{ageShow ? 'disnone' : ''}}">
+  <view class="edit-view">
+    <view class="edit-title">
+      <text class="edit-title-text">修改年龄</text>
+    </view>
+    <view class="edit-input">
+      <input type="text" value='{{age}}' bindinput="inputTxt"/>
+    </view>
+    <view class="edit-btn">
+      <view class="edit-confirm" bindtap="ageConfirm">
+        <text class="edit-confirm-text">确定</text>
+      </view>
+      <view class="edit-cancel" bindtap="editCancel">
+        <text class="edit-cancel-text">取消</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="edit-bg {{jobShow ? 'disnone' : ''}}">
+  <view class="edit-view">
+    <view class="edit-title">
+      <text class="edit-title-text">修改职位</text>
+    </view>
+    <view class="edit-input">
+      <input type="text" value='{{job}}' bindinput="inputTxt"/>
+    </view>
+    <view class="edit-btn">
+      <view class="edit-confirm" bindtap="jobConfirm">
+        <text class="edit-confirm-text">确定</text>
+      </view>
+      <view class="edit-cancel" bindtap="editCancel">
+        <text class="edit-cancel-text">取消</text>
+      </view>
+    </view>
+  </view>
+</view>

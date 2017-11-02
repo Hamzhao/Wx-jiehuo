@@ -1,0 +1,168 @@
+<!--index.wxml-->
+<view>
+  <view class="top-view">
+  <view class="near-top">
+      <image class="top-logo" src="../../image/Logo.jpg"></image>
+      <view class="top-text">
+        <text class="top-text-h2">你的阿拉丁神灯</text>
+        <text class="top-text-h4">问答解惑 免费共享 资源互助</text>
+      </view>
+  </view>
+  <view class="near-icon-action">
+      <view class="near-icon-left" data-show="isShow" bindtap="showChoose">
+        <icon class="near-icon-action-block"></icon>筛选
+      </view>
+      <view bindtap="showChoose" data-show="isShow1" class="near-icon-right-view">
+        <image class="near-icon-right" mode="aspectFit" src="../../image/search-1.png"></image>
+      </view>
+  </view>
+  </view>
+  <view class="scroll-view">
+  
+    <view class="user-view" wx:for="{{init}}" wx:key="{{index}}">
+      <view class="user-head-view" data-anyid="{{item.userId}}">
+         <image class="user-head" src="{{item.userPicture}}"></image>
+      </view>
+        <view class="user-media">
+          <view class="user-media-title">
+              <view class="user-name">{{item.nickName}}</view>
+              <view class="user-age user-age-text {{item.sex == 0?'male-back':''}} {{sys?'user-padding':''}}">{{item.age==null?0:item.age}}岁</view>
+              <view class="user-star user-star-text {{sys?'user-padding':''}}"><image class="user-star-icon" src="../../image/discover_starlv.png"></image>{{item.level}}</view>
+              <view class="user-job {{item.job==''||item.job==null?'disnone':''}} {{sys?'user-padding':''}}">{{item.job}}</view>
+          </view>
+          <view class="user-media-question">
+            {{item.content}}
+          </view>
+          <view class="user-images-view">      
+              <block wx:for="{{[item.pictureUrl1, item.pictureUrl2, item.pictureUrl3, item.pictureUrl4, item.pictureUrl5,item.pictureUrl6,item.pictureUrl7,item.pictureUrl8,item.pictureUrl9]}}" wx:for-item="i">
+                <block wx:if="{{i}}"> 
+                  <image bindtap="PreviewImage" data-pic="{{[item.pictureUrl1, item.pictureUrl2, item.pictureUrl3, item.pictureUrl4, item.pictureUrl5,item.pictureUrl6,item.pictureUrl7,item.pictureUrl8,item.pictureUrl9]}}" data-index="{{index}}" class="user-media-image {{item.isPicture && 'user-record-image2'}}" mode="aspectFill" src="{{imgUrl + i}}"></image>
+                </block>
+              </block>
+          </view>
+          <view class="user-media-detail">
+            <view class="user-left-view">
+                <view class="user-time-view">{{item.time}}</view>
+                <view class="user-location-view">{{item.distance}}</view>
+            </view>
+            <view class="user-right-view">
+            <view data-id="{{index}}" data-qaId="{{item.questionAnswerId}}" class="user-item-view {{!item.isMe && 'disnone'}}" bindtap="Praise">
+                <image mode="aspectFit" class="user-good-icon {{sys?'':'top'}}" src="{{item.isPraise == 0?'../../image/good.png':'../../image/discover_collection.png'}}"></image>
+              <text class="user-good-text">赞({{item.praiseCount}})</text>
+            </view>
+            
+            
+              <view class="user-item-view user-follow-view" data-itemIndex="{{index}}" bindtap="bindViewTap">
+                  <image class="user-follow-icon {{sys?'':'top'}}" mode="aspectFit" src="../../image/message.png"></image>
+                  <text class="user-good-text">评论({{item.replyCount}})</text>
+                  <view class="up-arrow-icon {{item.childs.length == 0 && 'disnone'}}"></view>
+              </view>
+              <view class="user-item-view user-delete-view {{item.isMe && 'disnone'}}" bindtap="Delete" data-index="{{index}}" data-qaid="{{item.questionAnswerId}}">
+                  <image mode="aspectFit" class="user-delete-icon {{sys?'':'top'}}" src="../../image/delete.png"></image>
+                <text class="user-follow-text">删除</text>
+              </view>
+              <view class="user-item-view user-secret-view {{item.isMe && 'disnone'}}">
+                  <image mode="aspectFit" class="user-secret-icon {{sys?'':'top'}}" src="../../image/find_answer_lock.png"></image>
+                <text class="user-secret-text">设为私密</text>
+              </view>
+              <view class="user-item-view user-warn-view {{!item.isMe && 'disnone'}}">
+                  <image mode="aspectFit" class="user-warn-icon {{sys?'':'top'}}" src="../../image/otherReport@2x.png"></image>
+                <text class="user-warn-text">举报</text>
+              </view>
+            </view>
+          </view>
+          <view class="user-media-bottom {{item.childs.length == 0 && 'disnone'}}">
+            <view class="user-comment-head-view">
+              <image mode="aspectFill" class="user-comment-head" src="{{item.childs[0].userPicture}}"></image>
+            </view>
+            <view class="user-comment-view">
+              <text class="user-comment-name">{{item.childs[0].nickName}}：</text>
+              <text class="user-comment-text">{{item.childs[0].content}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+</view>
+  
+</view>
+
+    <view class="choose-bg {{isShow?'disnone' : ''}}">
+      <view class="choose-view">
+        <view class="choose-title">
+          <text class="choose-title-text">筛 选</text>
+        </view>
+        <view class="choose-body">
+          <text class="choose-item-name">性别</text>
+          <view class="choose-item-body-view">
+            <view wx:for="{{sex}}" wx:key="{{index}}" data-hi="{{index}}" class="{{item.bol?'choose-item choose-item-active':'choose-item'}}" bindtap="sexShow">
+              {{item.name}}
+            </view>
+          </view>
+          <text class="choose-item-name">出现的时间</text>
+          <view class="choose-item-body-view">
+            <view wx:for="{{time}}" wx:key="{{index}}" data-hi="{{index}}" class="{{item.bol?'choose-item choose-item-active':'choose-item'}}" bindtap="timeShow">
+              {{item.name}}
+            </view>
+          </view>
+          <view hover="true" hover-class="view-hover" class="choose-picker-item" bindtap="goPicker" data-fo="y">
+            <view class="choose-picker-text">年龄</view>
+            <view class="choose-picker-num"> 
+              <text class="choose-picker-num-text">{{age}}</text>
+              <image class="choose-picker-num-icon" src="../../image/discover_next.png"></image>
+            </view>
+          </view>
+          <view hover="true" hover-class="view-hover" class="choose-picker-item" data-fo="d" bindtap="goPicker">
+            <view class="choose-picker-text">距离（地图漫游时无效）</view>
+            <view class="choose-picker-num">
+              <text class="choose-picker-num-text">{{dis}}</text>
+              <image class="choose-picker-num-icon" src="../../image/discover_next.png"></image>
+            </view>
+          </view>
+          <view hover="true" hover-class="view-hover" class="choose-picker-item">
+            <view class="choose-picker-text">擅长回答</view>
+            <view class="choose-picker-num">
+              <text class="choose-picker-num-text">音乐 电影 计算机 美食</text>
+              <image class="choose-picker-num-icon" src="../../image/discover_next.png"></image>
+            </view>
+          </view>
+        </view>
+        <view class="choose-btn">
+          <view hover="true" hover-class="view-hover" class="choose-confirm" data-update="true" data-show="isShow" bindtap="closeChoose">
+            <text class="chooser-confirm-text">确定</text>
+          </view>
+          <view hover="true" hover-class="view-hover" class="choose-cancel" data-update="false" data-show="isShow" bindtap="closeChoose">
+            <text class="chooser-cancel-text">取消</text>
+          </view>
+        </view>
+      </view>
+ 
+    </view>
+
+<view class="choose-bg" hidden="{{isShow1}}">
+  <view class="choose-view search-view">
+        <view class="choose-title">
+          <text class="choose-title-text">搜索</text>
+        </view>
+        <form bindreset="reset" bindsubmit="searchSubmit">
+          <view class="border">
+            <view class="search-input-view" bindtap="Focus">
+              <!--<view class="input" style="color:{{search===''?'#d3d3d3':'#666'}}" bindtap="Focus">
+              {{search===''?placeHolder:search}}   
+              </view>
+              <input class="hideInput" maxlength="-1" focus="{{f}}" value="{{search}}" type="text" bindinput="searchInput" name="input" placeholder="请输入搜索内容"/>-->
+              <input class="inputText" maxlength="-1" focus="{{f}}" name="input" type="text" placeholder="请输入搜索内容"/>
+            </view>
+            </view>
+            <view class="choose-btn">
+              <button class="choose-confirm" data-update="true" data-show="isShow1" formType="submit">
+                <text class="chooser-confirm-text">确定</text>
+              </button>
+              <button class="choose-cancel" data-update="false" data-show="isShow1" bindtap="closeChoose" formType="reset">
+                <text class="chooser-cancel-text">取消</text>
+              </button>
+            </view>
+          </form>
+  </view>
+</view>
+

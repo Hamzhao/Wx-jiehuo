@@ -1,0 +1,53 @@
+{
+  "pages":[
+    "pages/near/near",
+    "pages/otherQA/otherQA",
+    "pages/me/me",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/jiehuo/jiehuo",
+    "pages/about/about",
+    "pages/label/label",
+    "pages/myHead/myHead",
+    "pages/picker/picker",
+    "pages/myQ/myQ"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fafafa",
+    "navigationBarTitleText": "解惑",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#F3F3F3",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#0D88D0",
+    "list": [{
+      "pagePath": "pages/near/near",
+      "text": "首页",
+      "iconPath": "image/nearby.png",
+      "selectedIconPath": "image/nearby_hover.png"
+    },
+    {
+      "pagePath":"pages/jiehuo/jiehuo",
+      "text":"解惑",
+      "iconPath":"image/jiehuo.png",
+      "selectedIconPath":"image/jiehuo2.png"
+    },
+    {
+      "pagePath":"pages/me/me",
+      "text":"我的",
+      "iconPath":"image/user-2.png",
+      "selectedIconPath":"image/user-1.png"
+    }]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "downloadFile": 10000,
+    "uploadFile":10000,
+    "connectSocket":10000
+    }
+}

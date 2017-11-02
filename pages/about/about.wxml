@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="about-view">
+    <label class="url">访问解惑官方网站</label>
+    <text class="url"><text class="c666">http://</text>www.jiehuoapp.com</text>
+  </view>
+  <view class="about-view">
+    <label>解惑微信号</label>
+    <text class='row'>jiehuoapp</text>
+  </view>
+  <view class="about-view">
+    <label>客服电话</label>
+    <text class="tel row" bindtap="call">13416471190</text>
+  </view>
+  <view class="about-view">
+    <label>客服邮箱</label>
+    <text class='row'>2590067099@qq.com</text>
+  </view>
+  <view class="register">
+    <button bindtap="choose">注册</button>
+    <text>注册后，手机号可在“解惑”APP自由登录，及使用更多功能。</text>
+  </view>
+</view>
+
+<view class="choose-bg {{isShow?'disnone' : ''}}">
+  <view class="choose-view">
+        <view class="choose-body">
+          <view class="phone-input-view">
+            <image class="img-u" src="../../image/icon-u.png"></image>
+            <input class="input" placeholder="手机号码" type="number" maxlength="13" placeholder-class="input-placeholder" bindinput="savePhone" value="{{phone}}"/>
+          </view>
+          <view class="phone-input-view">
+            <image class="img-c" src="../../image/icon-c.png"></image>
+            <input class="input" placeholder="验证码" type="number" maxlength="4" placeholder-class="input-placeholder" bindinput="saveCode" value="{{code}}"/>
+             <view class="input-btn {{isTest?'':'input-click'}}" bindtap="test">
+              {{text}}
+             </view>   
+          </view>
+          <view class="phone-input-view">
+            <image class="img-p" src="../../image/icon-p.png"></image>
+            <input class="input" placeholder="密码" type="{{ pwdType }}" minlength="6" placeholder-class="input-placeholder" bindinput="savePassword" focus="{{btnfc}}" value="{{password}}"/>
+            <text class="pwdType" bindtap="pwdType">{{isHidden?'显示':'隐藏'}}</text>
+          </view>
+        </view>
+        <view class="choose-btn">
+          <view hover="true" hover-class="view-hover" class="choose-confirm" bindtap="confirm">
+            <text class="chooser-confirm-text">注册</text>
+          </view>
+          <view hover="true" hover-class="view-hover" class="choose-cancel" bindtap="choose">
+            <text class="chooser-cancel-text">取消</text>
+          </view>
+        </view>
+  </view>
+</view>
+

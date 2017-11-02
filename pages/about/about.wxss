@@ -1,0 +1,232 @@
+/**about.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: '微软雅黑'
+} 
+.c666{
+  color: #666;
+}
+page {
+  background-color:#F0F0F0;
+}
+.about-view {
+  width: 680rpx;
+  padding: 28rpx 0;
+  font-size: 30rpx;
+  border-bottom: 2rpx solid #D3D3D3;
+  color: #666;
+}
+.about-view label {
+  display: inline-block;
+  width:50%;
+}
+.about-view label.url{
+  width: 40%
+}
+.about-view text.url{
+  width: 60%;
+  text-align:right;
+  display:inline-block;
+}
+.about-view text.row{
+  display: inline-block;
+  width:50%;
+  text-align:right;
+}
+.about-view .tel,.about-view text.url {
+  color: #3DB6FB;
+}
+/*注册*/
+.register{
+  width: 680rpx;
+  margin-top: 72rpx;
+}
+.register text{
+  font-size: 28rpx;
+  color: #999
+}
+.register button{
+  color:white;
+  font-size:35rpx;
+  padding:5rpx 0;
+  background-color:#3DB6FB;
+
+}
+
+/**弹出框**/
+/**choose**/
+.choose-bg{
+  position: fixed;
+  top:0;
+  left: 0;
+  display: flex;
+  width:100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .3);
+}
+.choose-view{
+  display: flex;
+  flex-direction: column;
+  border-radius: 7rpx;
+  background-color: white;
+  width:677rpx;
+  overflow: hidden;
+  margin-top:-330rpx;
+}
+.choose-body{
+  padding:0 10rpx;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column
+}
+.choose-body .img-u {
+  width: 39rpx;
+  height: 35rpx
+}
+.choose-body .img-c,.choose-body .img-p {
+  width: 35rpx;
+  height: 39rpx
+}
+.choose-title{
+  display: flex;
+  height: 90rpx;
+  align-items: center;
+  justify-content: center;
+}
+.choose-title-text{
+  font-size: 32rpx;
+  color:#333333;
+}
+.choose-item-body-view{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.choose-item{
+  height: 58rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:30rpx;
+  flex: 1 0 auto;
+  border:1rpx solid #D3D3D3;
+  margin:17rpx 10rpx 17rpx 10rpx;
+  color:#333333; 
+  font-size: 30rpx;
+}
+.choose-item-active{
+  background-color: #17B1F7;
+  color:#ffffff;
+  border:1rpx solid #17B1F7;
+}
+.choose-picker-num-icon{
+  width:16rpx;
+  height: 29rpx;
+}
+.choose-item-name,.choose-picker-text{
+  font-size: 28rpx;
+  color:#666666;
+}
+.choose-picker-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 73rpx;
+  border-bottom:2rpx solid #E3E3E3;
+}
+.choose-picker-item:last-child{
+  border-bottom: none;
+}
+.choose-picker-num-text{
+  font-size: 28rpx;
+  color:#333333;
+  margin-right: 21rpx;
+}
+.choose-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 65rpx 0 79rpx;
+}
+.choose-confirm,.choose-cancel{
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: center;
+  height: 94rpx;
+}
+.chooser-confirm-text,.chooser-cancel-text{
+  font-size: 30rpx;
+  color:#fff;
+  background-color: #c4c4c4;
+  width: 233rpx;
+  height: 71rpx;
+  line-height: 71rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  border:1rpx solid #c4c4c4;
+}
+.chooser-confirm-text{
+  background-color:#17B1F7;
+  border:1rpx solid #17B1F7;
+  color: white
+}
+.view-hover{
+  background-color: #E3E3E3;
+}
+.disnone{
+  display: none;
+}
+.input-placeholder{
+  font-size: 30rpx;
+  color:#aaa;
+}
+.input-btn{
+  font-size:28rpx;
+  color:#aaa;
+  border-radius:7rpx;
+  border:2rpx solid #17B1F7;
+  width:163rpx;
+  height:60rpx;
+  line-height:60rpx;
+  text-align:center;
+}
+.input-click{
+  background-color: #aaa;
+  color: #fff;
+}
+.phone-input-view{
+  width:580rpx;
+  height:120rpx;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  border-bottom: 2rpx #17B1F7 solid;
+  padding:0 40rpx;
+}
+.input{
+  width:340rpx;
+  height: 60rpx;
+  margin-left: 20rpx;
+}
+.pwdType {
+  font-size:28rpx;
+  color:#aaa;
+  border-radius:7rpx;
+  border:2rpx solid #17B1F7;
+  width:163rpx;
+  height:60rpx;
+  line-height:60rpx;
+  text-align:center;
+}
